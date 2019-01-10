@@ -27,3 +27,9 @@ Template.AdminHeader.events
 	'click .btn-sign-out': () ->
 		Meteor.logout ->
 			Router.go(AdminConfig?.logoutRedirect or '/')
+
+Template.AdminDashboardEdit.events
+	'keydown input': (e) ->
+	  if e.key == 'Enter'
+		  e.stopPropagation
+		  return false
